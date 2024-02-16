@@ -4,10 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web Page!</title>
+    <title>환타민C</title>
 </head>
 <body>
-    <p>나의 열 번째 웹 페이지</p>
-    <a href="https://idenist.github.io/fantamin-C/graphtest">그래프 보러 가기</a>
+    <style>
+        body {
+            height : 100vh; /* 뷰포트 전체 높이에 적용 */
+            background: linear-gradient(to bottom, #ff6600, #ffffff); /* 배경에 그라데이션 적용 */
+            display : flex; /* 플렉스 박스 레이아웃 */
+            flex-direction : column; /* 주축 방향을 위에서 아래로 */
+            justify-content : center; /* 주축 방향 가운데 정렬 */
+            align-items: center;  /* 교차축 방향 가운데 정렬 */
+        }
+        .login-container {
+            display : flex; /* 플렉스 박스 레이아웃 */
+            flex-direction : column; /* 주축 방향을 위에서 아래로 */
+            justify-content : center; /* 주축 방향 가운데 정렬 */
+            align-items: center;  /* 교차축 방향 가운데 정렬 */
+            box-shadow : 2px 2px 5px 5px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+            border-radius : 10px; /* 모서리를 둥글게 */
+            width : 500px;
+            height : 400px;            
+            background-color: #ffffff;
+            box-sizing : border-box; /* width와 height를 여백, 테두리 모두 포함해서 각각 500px, 400px이 되도록 */
+        }
+        input {
+            border-color: #000000;
+            border-radius : 10px;
+            margin : 5px;
+            padding : 10px;
+            width : 300px;
+            height : 20px;
+            font-size : 16px;
+        }
+        .buttons {
+            display : flex; /* 플렉스 박스 레이아웃 */
+            justify-content : center; /* 주축 방향 가운데 정렬 */
+        }
+        .buttons > button {
+            margin : 10px;
+        }
+        .buttons > a > button {
+            margin : 10px;
+        }
+        button:active {
+            background-color : #333333;
+            color : #ffffff;
+        }
+        form {
+            font-size: 24px;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing : border-box;
+            height:380.4px; /* 얘를 꼭 설정해줘야 가운데 정렬이 됨! */
+        }
+    </style>
+
+    <fieldset class="login-container"> 
+        <div class="content-wrapper">
+            <a href="./index.html">
+                <img src="./main_logo.png" alt="메인로고" height="95px" width="320px">
+            </a><br>
+            <form name="login-form" action="#" method="post">
+                ▶ID<br>
+                <label for="id"><input type="text" id="id" placeholder="아이디" minlength="4" required></label><br>
+                ▶Password<br>
+                <label for="pw"><input type="password" id="pw" placeholder="비밀번호" minlength="6" required></label><br>
+                <div class="buttons">
+                    <button type="submit">로그인</button> 
+                    <button type="button" onclick="goSignUp()">회원가입</button>
+                    <script>
+                        function goSignUp() {
+                            window.location.href = "./signup.html"
+                        }
+                    </script>
+                </div> 
+            </form>
+        </div>
+    </fieldset>
 </body>
 </html>
